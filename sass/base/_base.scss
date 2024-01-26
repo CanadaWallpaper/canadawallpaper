@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  background: $dark-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $light-color;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

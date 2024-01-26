@@ -1,0 +1,86 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+p {
+  line-height: 1.7; }
+
+a {
+  text-decoration: none; }
+
+ul,
+li {
+  list-style: none; }
+
+body {
+  width: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+
+.container {
+  width: 100%;
+  max-width: 1200px; }
+
+.app-header {
+  background: url(../images/hero-canada-wallpaper.png) top no-repeat;
+  background-size: cover;
+  height: 100vh; }
+  .app-header .header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .app-header .header-container .header-navbar {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.616);
+      width: 100%; }
+      .app-header .header-container .header-navbar .container .header-navbar-contents {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .app-header .header-container .header-navbar .container .header-navbar-contents .header-logo img {
+          display: block;
+          width: 100px; }
+        .app-header .header-container .header-navbar .container .header-navbar-contents .header-menu ul {
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          .app-header .header-container .header-navbar .container .header-navbar-contents .header-menu ul li {
+            margin: 0 10px;
+            cursor: pointer; }
+        .app-header .header-container .header-navbar .container .header-navbar-contents .header-icons .language {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 6px;
+          background: #fff;
+          color: #1e1e1e;
+          border-radius: 15px;
+          font-weight: 500; }
+    .app-header .header-container .hero-contents {
+      display: flex;
+      justify-content: center;
+      padding: 20px; }
+      .app-header .header-container .hero-contents .container .hero-content-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding-top: 120px; }
+        .app-header .header-container .hero-contents .container .hero-content-inner h1 {
+          text-align: end;
+          font-size: 90px;
+          margin-bottom: 20px; }
+        .app-header .header-container .hero-contents .container .hero-content-inner p {
+          align-self: flex-end;
+          text-align: end;
+          max-width: 400px;
+          font-size: 25px; }
