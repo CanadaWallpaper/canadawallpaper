@@ -152,7 +152,8 @@ body {
       margin-bottom: 30px; }
   .app-main .main-container .main-about-container .container p {
     text-align: center;
-    font-size: 18px; }
+    font-size: 18px;
+    padding: 20px; }
 
 .button-shop {
   display: inline-flex;
