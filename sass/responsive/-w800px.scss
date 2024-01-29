@@ -1,5 +1,9 @@
 @media (max-width: 800px) {
   .app-header {
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)),
+      url(../images/hero-canada-wallpaper.png) 30% no-repeat;
+
     .header-container {
       // align-items: center;
       .header-navbar {
