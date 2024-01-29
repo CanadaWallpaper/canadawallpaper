@@ -1,11 +1,18 @@
 .app-header {
-  background: url(../images/hero-canada-wallpaper.png) top no-repeat;
+  display: flex;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)),
+    url(../images/hero-canada-wallpaper.png) top no-repeat;
   background-size: cover;
   height: 100vh;
   .header-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     // align-items: center;
     .header-navbar {
       padding: $padding;
@@ -23,6 +30,7 @@
             img {
               display: block;
               width: 100px;
+              cursor: pointer;
             }
           }
           .header-menu {
@@ -33,19 +41,44 @@
               li {
                 margin: 0 10px;
                 cursor: pointer;
+                transition: 0.5s;
+                &:hover {
+                  color: $primary-color;
+                }
               }
             }
           }
           .header-icons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             .language {
+              font-size: 12px;
               display: flex;
               align-items: center;
               justify-content: center;
-              padding: 6px;
+              padding: 5px;
               background: $light-color;
               color: $secondary-color;
               border-radius: $border-radious;
-              font-weight: 500;
+              font-weight: 400;
+              cursor: pointer;
+              transition: 0.5s;
+              &:hover {
+                background: $dark-color;
+
+                color: $light-color;
+              }
+            }
+            i {
+              display: none;
+              font-size: 25px;
+              margin: 0 10px;
+              cursor: pointer;
+              transition: 0.5s;
+              &:hover {
+                color: $primary-color;
+              }
             }
           }
         }
@@ -60,19 +93,41 @@
         .hero-content-inner {
           display: flex;
           flex-direction: column;
-          justify-content: end;
-          padding-top: 120px;
+
           h1 {
             text-align: end;
-            font-size: 90px;
+            font-weight: normal;
+
+            font-size: 75px;
             margin-bottom: 20px;
           }
           p {
             align-self: flex-end;
             text-align: end;
             max-width: 400px;
-            font-size: 25px;
+            font-size: 20px;
           }
+          .button-shop {
+            align-self: flex-end;
+          }
+        }
+      }
+    }
+
+    // category select
+    .hero-category-select {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: flex-end;
+      span:first-child,
+      span:last-child {
+        margin: 0 15px;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+          color: $primary-color;
         }
       }
     }

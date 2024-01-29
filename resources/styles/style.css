@@ -1,3 +1,9 @@
+.font-italiana {
+  font-family: "Italiana", sans-serif; }
+
+.font-inter {
+  font-family: "Inter", sans-serif; }
+
 *,
 *::after,
 *::before {
@@ -29,13 +35,18 @@ body {
   max-width: 1200px; }
 
 .app-header {
-  background: url(../images/hero-canada-wallpaper.png) top no-repeat;
+  display: flex;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), black), url(../images/hero-canada-wallpaper.png) top no-repeat;
   background-size: cover;
   height: 100vh; }
   .app-header .header-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center; }
+    justify-content: space-between; }
     .app-header .header-container .header-navbar {
       padding: 20px;
       display: flex;
@@ -49,38 +60,127 @@ body {
         align-items: center; }
         .app-header .header-container .header-navbar .container .header-navbar-contents .header-logo img {
           display: block;
-          width: 100px; }
+          width: 100px;
+          cursor: pointer; }
         .app-header .header-container .header-navbar .container .header-navbar-contents .header-menu ul {
           display: flex;
           justify-content: space-between;
           align-items: center; }
           .app-header .header-container .header-navbar .container .header-navbar-contents .header-menu ul li {
             margin: 0 10px;
-            cursor: pointer; }
-        .app-header .header-container .header-navbar .container .header-navbar-contents .header-icons .language {
+            cursor: pointer;
+            transition: 0.5s; }
+            .app-header .header-container .header-navbar .container .header-navbar-contents .header-menu ul li:hover {
+              color: crimson; }
+        .app-header .header-container .header-navbar .container .header-navbar-contents .header-icons {
           display: flex;
           align-items: center;
-          justify-content: center;
-          padding: 6px;
-          background: #fff;
-          color: #1e1e1e;
-          border-radius: 15px;
-          font-weight: 500; }
+          justify-content: space-between; }
+          .app-header .header-container .header-navbar .container .header-navbar-contents .header-icons .language {
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            background: #fff;
+            color: #1e1e1e;
+            border-radius: 15px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: 0.5s; }
+            .app-header .header-container .header-navbar .container .header-navbar-contents .header-icons .language:hover {
+              background: #000;
+              color: #fff; }
+          .app-header .header-container .header-navbar .container .header-navbar-contents .header-icons i {
+            display: none;
+            font-size: 25px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: 0.5s; }
+            .app-header .header-container .header-navbar .container .header-navbar-contents .header-icons i:hover {
+              color: crimson; }
     .app-header .header-container .hero-contents {
       display: flex;
       justify-content: center;
       padding: 20px; }
       .app-header .header-container .hero-contents .container .hero-content-inner {
         display: flex;
-        flex-direction: column;
-        justify-content: end;
-        padding-top: 120px; }
+        flex-direction: column; }
         .app-header .header-container .hero-contents .container .hero-content-inner h1 {
           text-align: end;
-          font-size: 90px;
+          font-weight: normal;
+          font-size: 75px;
           margin-bottom: 20px; }
         .app-header .header-container .hero-contents .container .hero-content-inner p {
           align-self: flex-end;
           text-align: end;
           max-width: 400px;
-          font-size: 25px; }
+          font-size: 20px; }
+        .app-header .header-container .hero-contents .container .hero-content-inner .button-shop {
+          align-self: flex-end; }
+    .app-header .header-container .hero-category-select {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: flex-end; }
+      .app-header .header-container .hero-category-select span:first-child,
+      .app-header .header-container .hero-category-select span:last-child {
+        margin: 0 15px;
+        cursor: pointer;
+        transition: 0.5s; }
+        .app-header .header-container .hero-category-select span:first-child:hover,
+        .app-header .header-container .hero-category-select span:last-child:hover {
+          color: crimson; }
+
+.button-shop {
+  display: inline-flex;
+  padding: 10px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  border: 1px solid #fff;
+  outline: none;
+  color: #fff;
+  background: transparent;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: 0.5s; }
+  .button-shop:hover {
+    border: 1px solid crimson;
+    color: crimson; }
+
+@media (max-width: 1024px) {
+  .app-header .header-container .hero-contents {
+    display: flex;
+    justify-content: center;
+    padding: 20px; }
+    .app-header .header-container .hero-contents .container .hero-content-inner {
+      display: flex;
+      flex-direction: column; }
+      .app-header .header-container .hero-contents .container .hero-content-inner h1 {
+        text-align: end;
+        font-weight: normal;
+        font-size: 50px;
+        margin-bottom: 20px; }
+      .app-header .header-container .hero-contents .container .hero-content-inner p {
+        align-self: flex-end;
+        text-align: end;
+        max-width: 400px;
+        font-size: 15px; } }
+
+@media (max-width: 800px) {
+  .app-header .header-container .header-navbar .container .header-navbar-contents .header-menu ul {
+    display: none; }
+  .app-header .header-container .header-navbar .container .header-navbar-contents .header-icons i {
+    display: flex; }
+  .app-header .header-container .hero-contents .container .hero-content-inner h1 {
+    text-align: center;
+    font-size: 45px; }
+  .app-header .header-container .hero-contents .container .hero-content-inner p {
+    align-self: center;
+    text-align: center;
+    font-size: 14px; }
+  .app-header .header-container .hero-contents .container .hero-content-inner .button-shop {
+    align-self: center; } }

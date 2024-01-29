@@ -1,0 +1,20 @@
+.button-shop {
+  display: inline-flex;
+
+  padding: 10px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  border: 1px solid $light-color;
+  outline: none;
+  color: $light-color;
+  background: transparent;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: 0.5s;
+  &:hover {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+  }
+}
