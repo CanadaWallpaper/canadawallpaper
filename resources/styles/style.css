@@ -48,7 +48,7 @@ body {
     flex-direction: column;
     justify-content: space-between; }
     .app-header .header-container .header-navbar {
-      padding: 20px;
+      padding: 10px 20px;
       display: flex;
       justify-content: center;
       background-color: rgba(0, 0, 0, 0.616);
@@ -132,6 +132,27 @@ body {
         .app-header .header-container .hero-category-select span:first-child:hover,
         .app-header .header-container .hero-category-select span:last-child:hover {
           color: crimson; }
+
+.app-main .main-container .main-about-container {
+  width: 100%;
+  padding: 50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .app-main .main-container .main-about-container .container .main-about {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .app-main .main-container .main-about-container .container .main-about .main-about-logo img {
+      object-fit: cover;
+      object-position: center;
+      width: 250px;
+      margin-bottom: 30px; }
+  .app-main .main-container .main-about-container .container p {
+    text-align: center;
+    font-size: 18px; }
 
 .button-shop {
   display: inline-flex;

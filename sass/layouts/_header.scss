@@ -9,13 +9,13 @@
     width: 100%;
     height: 100%;
     padding-bottom: 20px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     // align-items: center;
     .header-navbar {
-      padding: $padding;
+      padding: ($padding / 2) $padding;
+
       display: flex;
       justify-content: center;
       background-color: $glass-box;
