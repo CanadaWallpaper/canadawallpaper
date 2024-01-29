@@ -2,13 +2,18 @@
   .app-header {
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)),
-      url(../images/hero-canada-wallpaper.png) 30% no-repeat;
+      url(../images/hero-canada-wallpaper.png) 30% 0% no-repeat;
 
     .header-container {
       // align-items: center;
       .header-navbar {
         .container {
           .header-navbar-contents {
+            .header-logo {
+              img {
+                width: 80px;
+              }
+            }
             .header-menu {
               ul {
                 display: none;
@@ -28,12 +33,13 @@
           .hero-content-inner {
             h1 {
               text-align: center;
-              font-size: 45px;
+              font-size: 50px;
             }
             p {
               align-self: center;
               text-align: center;
-              font-size: 14px;
+              font-size: 16px;
+              margin: 20px 0;
             }
             .button-shop {
               align-self: center;

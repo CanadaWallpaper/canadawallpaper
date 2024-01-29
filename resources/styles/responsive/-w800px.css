@@ -1,17 +1,20 @@
 @media (max-width: 800px) {
   .app-header {
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), black), url(../images/hero-canada-wallpaper.png) 30% no-repeat; }
+    background: linear-gradient(rgba(0, 0, 0, 0.3), black), url(../images/hero-canada-wallpaper.png) 30% 0% no-repeat; }
+    .app-header .header-container .header-navbar .container .header-navbar-contents .header-logo img {
+      width: 80px; }
     .app-header .header-container .header-navbar .container .header-navbar-contents .header-menu ul {
       display: none; }
     .app-header .header-container .header-navbar .container .header-navbar-contents .header-icons i {
       display: flex; }
     .app-header .header-container .hero-contents .container .hero-content-inner h1 {
       text-align: center;
-      font-size: 45px; }
+      font-size: 50px; }
     .app-header .header-container .hero-contents .container .hero-content-inner p {
       align-self: center;
       text-align: center;
-      font-size: 14px; }
+      font-size: 16px;
+      margin: 20px 0; }
     .app-header .header-container .hero-contents .container .hero-content-inner .button-shop {
       align-self: center; } }
