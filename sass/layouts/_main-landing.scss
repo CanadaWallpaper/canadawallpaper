@@ -1,5 +1,7 @@
 .app-main {
   .main-container {
+    width: 100%;
+    // about
     .main-about-container {
       width: 100%;
       padding: 50px $padding;
@@ -27,6 +29,93 @@
           text-align: center;
           font-size: 18px;
           padding: $padding;
+        }
+      }
+    }
+    // collection
+    .main-collection-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 100px;
+      .container {
+        .main-collection {
+          width: 100%;
+          padding: $padding;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      // menu
+      .collection-menu {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background: $secondary-color;
+        .container {
+          ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 15px 100px;
+            li {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              transition: 0.5s;
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+
+      // products
+      .container {
+        .product-container {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          padding: 25px;
+          margin-top: 25px;
+          & > i {
+            padding: 25px;
+            transform: scale(0);
+            font-size: 30px;
+            // opacity: 50%;
+            cursor: pointer;
+            transition: 0.5s;
+            &:hover {
+              color: $primary-color;
+            }
+          }
+          &:hover > i {
+            transform: scale(1);
+          }
+
+          .product-slider {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            .product-cards {
+              width: 100%;
+              // overflow: hidden;
+              display: flex;
+
+              transition: transform 0.5s ease-in-out;
+
+              .product-card {
+                flex: 0 0 calc(25% - 40px);
+              }
+            }
+          }
         }
       }
     }

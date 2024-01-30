@@ -3,3 +3,24 @@
   width: 100%;
   max-width: 1200px;
 }
+
+// heading title
+.heading-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: $light-color;
+  margin: 25px auto;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-weight: normal;
+}
+
+// menu selected
+.menu-selected {
+  border-bottom: 2px solid $primary-color;
+  padding: 5px 5px;
+  color: $primary-color;
+}

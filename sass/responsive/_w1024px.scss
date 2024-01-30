@@ -29,4 +29,24 @@
       }
     }
   }
+
+  //main
+  .app-main {
+    .main-container {
+      .main-collection-container {
+        // products
+        .container {
+          .product-container {
+            .product-slider {
+              .product-cards {
+                .product-card {
+                  flex: 0 0 calc(33.3333% - 40px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
