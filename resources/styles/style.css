@@ -213,7 +213,7 @@ body {
       padding: 25px;
       margin-top: 25px; }
       .app-main .main-container .main-collection-container .container .product-container > i {
-        padding: 25px;
+        padding: 15px;
         transform: scale(0);
         font-size: 30px;
         cursor: pointer;
@@ -231,7 +231,7 @@ body {
           display: flex;
           transition: transform 0.5s ease-in-out; }
           .app-main .main-container .main-collection-container .container .product-container .product-slider .product-cards .product-card {
-            flex: 0 0 calc(25% - 40px); }
+            flex: 0 0 calc(25% - 20px); }
 
 .button-shop {
   display: inline-flex;
@@ -256,7 +256,7 @@ body {
   border: 1px solid #fff;
   overflow: hidden;
   padding-bottom: 3px;
-  margin: 20px;
+  margin: 10px;
   cursor: pointer;
   transition: 0.5s; }
   .product-card:hover {
@@ -310,7 +310,7 @@ body {
         max-width: 400px;
         font-size: 15px; }
   .app-main .main-container .main-collection-container .container .product-container .product-slider .product-cards .product-card {
-    flex: 0 0 calc(33.3333% - 40px); } }
+    flex: 0 0 calc(33.3333% - 20px); } }
 
 @media (max-width: 800px) {
   .app-header {
@@ -335,4 +335,5 @@ body {
       .app-header .header-container .hero-contents .container .hero-content-inner .button-shop {
         align-self: center; }
   .app-main .main-container .main-collection-container .container .product-container .product-slider .product-cards .product-card {
+    margin: 20px;
     flex: 0 0 calc(100% - 40px); } }

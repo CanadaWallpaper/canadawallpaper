@@ -86,7 +86,7 @@
           padding: 25px;
           margin-top: 25px;
           & > i {
-            padding: 25px;
+            padding: 15px;
             transform: scale(0);
             font-size: 30px;
             // opacity: 50%;
@@ -112,7 +112,7 @@
               transition: transform 0.5s ease-in-out;
 
               .product-card {
-                flex: 0 0 calc(25% - 40px);
+                flex: 0 0 calc(25% - 20px);
               }
             }
           }
