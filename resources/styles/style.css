@@ -202,6 +202,7 @@ body {
           align-items: center;
           justify-content: center;
           cursor: pointer;
+          margin: 0 10px;
           transition: 0.5s; }
           .app-main .main-container .main-collection-container .collection-menu .container ul li:hover {
             color: crimson; }
