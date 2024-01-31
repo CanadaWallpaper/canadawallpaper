@@ -1,55 +1,88 @@
-// slider
-document.addEventListener('DOMContentLoaded', function () {
-    const slider = document.querySelector('.product-cards');
-    const cards = document.querySelectorAll('.product-card');
-    const prevBtn = document.querySelector('.previous-button');
-    const nextBtn = document.querySelector('.next-button');
+const slider = document.querySelector(".product-slider");
+const nextBtn = document.querySelector(".next-button");
+const prevBtn = document.querySelector(".previous-button");
+const product = document.querySelectorAll(".product-card");
 
-    let currentIndex = 0;
-    const cardWidth = cards[0].offsetWidth + 20; // Consider margin for card spacing
-    let autoSlideInterval;
+let product_page = Math.ceil(product.length / 4);
+let l = 0;
 
-    function updateSlider() {
-        const translateXValue = -currentIndex * cardWidth + 'px';
-        slider.style.transform = `translateX(${translateXValue})`;
-    }
+let movePer = 25;
+let maxMove = Math.ceil(product.length - 4) * 25;
 
-    function nextSlide() {
-        currentIndex++;
-        if (currentIndex > cards.length - 4) {
-            currentIndex = 0;
-        }
-        updateSlider();
-    }
+let mob_view1024 = window.matchMedia("(max-width: 1024px)");
+let mob_view800 = window.matchMedia("(max-width: 800px)");
 
-    function prevSlide() {
-        currentIndex--;
-        if (currentIndex < 0) {
-            currentIndex = cards.length - 4;
-        }
-        updateSlider();
-    }
+// Update the movePer and maxMove values for different screen sizes
+function updateSliderConfig() {
+  if (mob_view800.matches) {
+    movePer = 100;
+    maxMove = Math.ceil(product.length - 1) * 100;
+  } else if (mob_view1024.matches) {
+    movePer = 50;
+    maxMove = Math.ceil(product.length - 2) * 50;
+  } else {
+    movePer = 25;
+    maxMove = Math.ceil(product.length - 4) * 25;
+  }
+}
 
-    // Set up event listeners for manual navigation
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
+// Automatic slider functionality
+let intervalId; // Variable to store the interval ID
 
-    // Auto slide every 3 seconds
-    autoSlideInterval = setInterval(() => {
-        nextSlide();
-    }, 3000);
+function startSlider() {
+  intervalId = setInterval(() => {
+    right_mover();
+  }, 3000); // Adjust the interval duration (e.g., 3000 milliseconds or 3 seconds)
+}
 
-    // Pause auto slide on hover and resume on mouse leave
-    slider.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
-    });
+function stopSlider() {
+  clearInterval(intervalId);
+}
 
-    slider.addEventListener('mouseleave', () => {
-        autoSlideInterval = setInterval(() => {
-            nextSlide();
-        }, 3000);
-    });
+// Pause on hover functionality
+slider.addEventListener("mouseenter", stopSlider);
+slider.addEventListener("mouseleave", startSlider);
 
-    // Initial setup
-    updateSlider();
+// Right and left mover functions
+let right_mover = () => {
+  l = l + movePer;
+
+  if (l > maxMove) {
+    l = 0;
+  }
+
+  for (const i of product) {
+    i.style.left = "-" + l + "%";
+  }
+};
+
+let left_mover = () => {
+  l = l - movePer;
+
+  if (l < 0) {
+    l = maxMove;
+  }
+
+  for (const i of product) {
+    i.style.left = "-" + l + "%";
+  }
+};
+
+// Update slider configuration when the window is resized
+window.addEventListener("resize", () => {
+  updateSliderConfig();
+  left_mover(); // Ensure the left_mover reflects the updated configuration
 });
+
+// Initial setup
+updateSliderConfig();
+startSlider(); // Start the automatic slider
+
+// Click event listeners for next and previous buttons
+nextBtn.onclick = () => {
+  right_mover();
+};
+
+prevBtn.onclick = () => {
+  left_mover();
+};
