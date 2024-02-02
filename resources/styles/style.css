@@ -224,7 +224,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0 35px; }
+      padding: 10px 35px; }
       .app-main .main-container .main-collection-container .container .product-slider {
         width: 100%; }
         .app-main .main-container .main-collection-container .container .product-slider .products {
@@ -291,8 +291,103 @@ body {
         transform: scale(0);
         font-size: 20px;
         cursor: pointer;
-        transition: 1s; }
+        transition: 1s;
+        opacity: 0.5; }
         .app-main .main-container .main-collection-container .container > i:hover {
+          opacity: 1;
+          color: crimson; }
+    .app-main .main-container .main-collection-container .brand-slider-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 35px;
+      margin-top: 150px; }
+      .app-main .main-container .main-collection-container .brand-slider-wrapper .brand-slider {
+        width: 100%; }
+        .app-main .main-container .main-collection-container .brand-slider-wrapper .brand-slider .brands {
+          scroll-snap-align: start;
+          width: 100%;
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: calc(100% / 5);
+          grid-gap: 0px;
+          align-items: center;
+          overflow-x: auto;
+          scroll-snap-type: mandatory;
+          scroll-behavior: smooth;
+          scrollbar-width: 0; }
+          .app-main .main-container .main-collection-container .brand-slider-wrapper .brand-slider .brands::-webkit-scrollbar {
+            display: none; }
+          .app-main .main-container .main-collection-container .brand-slider-wrapper .brand-slider .brands .brand-card-wrapper {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            .app-main .main-container .main-collection-container .brand-slider-wrapper .brand-slider .brands .brand-card-wrapper .brand-card img {
+              width: 100%; }
+      .app-main .main-container .main-collection-container .brand-slider-wrapper > i {
+        z-index: 100;
+        padding: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 1s;
+        opacity: 0.5; }
+        .app-main .main-container .main-collection-container .brand-slider-wrapper > i:hover {
+          opacity: 1;
+          color: crimson; }
+  .app-main .main-container .main-brands-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 125px;
+    margin-bottom: 100px; }
+    .app-main .main-container .main-brands-container .container .main-brands {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+    .app-main .main-container .main-brands-container .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 35px; }
+      .app-main .main-container .main-brands-container .container .brand-slider {
+        width: 100%; }
+        .app-main .main-container .main-brands-container .container .brand-slider .brands {
+          scroll-snap-align: start;
+          width: 100%;
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: calc(100% / 5);
+          grid-gap: 0px;
+          align-items: center;
+          overflow-x: auto;
+          scroll-snap-type: mandatory;
+          scroll-behavior: smooth;
+          scrollbar-width: 0; }
+          .app-main .main-container .main-brands-container .container .brand-slider .brands::-webkit-scrollbar {
+            display: none; }
+          .app-main .main-container .main-brands-container .container .brand-slider .brands .brand-card-wrapper {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            .app-main .main-container .main-brands-container .container .brand-slider .brands .brand-card-wrapper .brand-card img {
+              max-width: 250px;
+              width: 100%; }
+      .app-main .main-container .main-brands-container .container > i {
+        z-index: 100;
+        padding: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 1s;
+        opacity: 0.5; }
+        .app-main .main-container .main-brands-container .container > i:hover {
+          opacity: 1;
           color: crimson; }
 
 .button-shop {
@@ -332,7 +427,9 @@ body {
         max-width: 400px;
         font-size: 15px; }
   .app-main .main-container .main-collection-container .container .product-slider .products {
-    grid-auto-columns: calc(100% / 3); } }
+    grid-auto-columns: calc(100% / 3); }
+  .app-main .main-container .main-brands-container .container .brand-slider .brands {
+    grid-auto-columns: calc(100% / 4); } }
 
 @media (max-width: 800px) {
   .app-header {
@@ -367,7 +464,9 @@ body {
       grid-auto-columns: calc(100% / 2); }
     .app-main .main-container .main-collection-container .container i {
       transform: scale(1);
-      font-size: 20px; } }
+      font-size: 20px; }
+  .app-main .main-container .main-brands-container .container .brand-slider .brands {
+    grid-auto-columns: calc(100% / 3); } }
 
 @media (max-width: 550px) {
   .app-main .main-container .main-collection-container .collection-menu .container ul {
@@ -378,4 +477,6 @@ body {
   .app-main .main-container .main-collection-container .container {
     padding: 0 30px; }
     .app-main .main-container .main-collection-container .container .product-slider .products {
-      grid-auto-columns: calc(100% / 1); } }
+      grid-auto-columns: calc(100% / 1); }
+  .app-main .main-container .main-brands-container .container .brand-slider .brands {
+    grid-auto-columns: calc(100% / 2); } }

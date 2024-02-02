@@ -33,12 +33,25 @@
   //main
   .app-main {
     .main-container {
+      // collection slider
       .main-collection-container {
         // products
         .container {
           .product-slider {
             .products {
               grid-auto-columns: calc(100% / 3);
+            }
+          }
+        }
+      }
+
+      // brand slider
+      .main-brands-container {
+        .container {
+          // overflow: hidden;
+          .brand-slider {
+            .brands {
+              grid-auto-columns: calc(100% / 4);
             }
           }
         }
