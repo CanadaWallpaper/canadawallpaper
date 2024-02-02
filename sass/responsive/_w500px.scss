@@ -17,12 +17,11 @@
         }
         // products
         .container {
-          padding: 0 15px;
+          padding: 0 30px;
           .product-slider {
-            padding: 0 10px;
+            // padding: 0 5px;
             .products {
-              padding: 0 15px;
-              grid-auto-columns: calc((100% / 1));
+              grid-auto-columns: calc(100% / 1);
             }
           }
         }

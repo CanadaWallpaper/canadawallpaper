@@ -90,18 +90,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
+        padding: 0 35px;
+        // overflow: hidden;
         .product-slider {
           width: 100%;
-          // padding: 0 20px;
 
           .products {
             scroll-snap-align: start;
             width: 100%;
             display: grid;
             grid-auto-flow: column;
-            grid-auto-columns: calc((100% / 4) - 12px);
-            grid-gap: 16px;
+            grid-auto-columns: calc(100% / 4);
+            grid-gap: 0px;
             overflow-x: auto;
             scroll-snap-type: mandatory;
             scroll-behavior: smooth;
@@ -109,57 +109,63 @@
             &::-webkit-scrollbar {
               display: none;
             }
-            .product-card {
+            .product-card-wrapper {
               width: 100%;
-              transition: 0.5s ease-in-out;
-              border-radius: 15px;
-              border: 1px solid $light-color;
-              overflow: hidden;
-              padding-bottom: 3px;
-              cursor: pointer;
-              &:hover {
-                .product-image {
-                  img {
-                    transform: scale(1.6);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              .product-card {
+                width: 95%;
+                transition: 0.5s ease-in-out;
+                border-radius: 15px;
+                border: 1px solid $light-color;
+                overflow: hidden;
+                padding-bottom: 3px;
+                cursor: pointer;
+                &:hover {
+                  .product-image {
+                    img {
+                      transform: scale(1.6);
+                    }
                   }
                 }
-              }
-              .product-image {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                // width: 250px;
-                width: 100%;
-                height: 200px;
-                overflow: hidden;
-                img {
-                  object-position: center;
-                  object-fit: cover;
+                .product-image {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  // width: 250px;
                   width: 100%;
-                  height: 100%;
-                  transition: 1s;
+                  height: 200px;
+                  overflow: hidden;
+                  img {
+                    object-position: center;
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                    transition: 1s;
+                  }
                 }
-              }
-              .product-info {
-                padding: 15px;
-                h6 {
-                  font-size: 15px;
+                .product-info {
+                  padding: 15px;
+                  h6 {
+                    font-size: 15px;
+                  }
+                  p {
+                    font-size: 12px;
+                    margin: 10px 0;
+                  }
                 }
-                p {
+                .button-shop {
+                  width: 100%;
+                  display: flex;
+                  justify-content: end;
                   font-size: 12px;
-                  margin: 10px 0;
-                }
-              }
-              .button-shop {
-                width: 100%;
-                display: flex;
-                justify-content: end;
-                font-size: 12px;
-                padding: 15px 20px;
-                margin: 0;
-                border: none;
-                i {
-                  margin: 0 5px;
+                  padding: 15px 20px;
+                  margin: 0;
+                  border: none;
+                  i {
+                    margin: 0 5px;
+                  }
                 }
               }
             }
@@ -167,9 +173,9 @@
         }
         & > i {
           z-index: 100;
-          padding: 10px;
+          padding: 5px;
           transform: scale(0);
-          font-size: 28px;
+          font-size: 20px;
           cursor: pointer;
           transition: 1s;
           &:hover {

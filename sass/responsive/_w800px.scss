@@ -54,13 +54,24 @@
   .app-main {
     .main-container {
       .main-collection-container {
+        // menu
+        .collection-menu {
+          .container {
+            ul {
+              padding: 15px 50px;
+              li {
+                margin-right: 60px;
+                font-size: 12px;
+              }
+            }
+          }
+        }
         // products
         .container {
-          padding: 0 5px;
+          padding: 0 30px;
           .product-slider {
-            padding: 0 10px;
             .products {
-              grid-auto-columns: calc((100% / 2) - 12px);
+              grid-auto-columns: calc(100% / 2);
             }
           }
           i {
