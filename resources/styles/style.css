@@ -389,6 +389,14 @@ body {
         .app-main .main-container .main-brands-container .container > i:hover {
           opacity: 1;
           color: crimson; }
+  .app-main .main-container .main-banner-container {
+    width: 100%;
+    margin-bottom: 2000px; }
+    .app-main .main-container .main-banner-container .main-banner {
+      width: 100%;
+      min-height: 600px;
+      background: linear-gradient(black, rgba(0, 0, 0, 0.2), black), url(../images/banner.png) top no-repeat fixed;
+      background-size: cover; }
 
 .button-shop {
   display: inline-flex;
