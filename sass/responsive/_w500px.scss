@@ -1,0 +1,43 @@
+@media (max-width: 550px) {
+  //main
+  .app-main {
+    .main-container {
+      .main-collection-container {
+        // menu
+        .collection-menu {
+          .container {
+            ul {
+              padding: 15px 10px;
+              li {
+                margin-right: 35px;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        // products
+        .container {
+          padding: 0 30px;
+          .product-slider {
+            // padding: 0 5px;
+            .products {
+              grid-auto-columns: calc(100% / 1);
+            }
+          }
+        }
+      }
+
+      // brand slider
+      .main-brands-container {
+        .container {
+          // overflow: hidden;
+          .brand-slider {
+            .brands {
+              grid-auto-columns: calc(100% / 2);
+            }
+          }
+        }
+      }
+    }
+  }
+}

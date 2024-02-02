@@ -54,16 +54,40 @@
   .app-main {
     .main-container {
       .main-collection-container {
+        // menu
+        .collection-menu {
+          .container {
+            ul {
+              padding: 15px 50px;
+              li {
+                margin-right: 60px;
+                font-size: 12px;
+              }
+            }
+          }
+        }
         // products
         .container {
-          .product-container {
-            .product-slider {
-              .product-cards {
-                .product-card {
-                  margin: 20px;
-                  flex: 0 0 calc(100% - 40px);
-                }
-              }
+          padding: 0 30px;
+          .product-slider {
+            .products {
+              grid-auto-columns: calc(100% / 2);
+            }
+          }
+          i {
+            transform: scale(1);
+            font-size: 20px;
+          }
+        }
+      }
+
+      // brand slider
+      .main-brands-container {
+        .container {
+          // overflow: hidden;
+          .brand-slider {
+            .brands {
+              grid-auto-columns: calc(100% / 3);
             }
           }
         }
