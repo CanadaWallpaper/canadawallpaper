@@ -394,7 +394,7 @@ body {
     margin-bottom: 2000px; }
     .app-main .main-container .main-banner-container .main-banner {
       width: 100%;
-      min-height: 600px;
+      min-height: 700px;
       background: linear-gradient(black, rgba(0, 0, 0, 0.5), black), url(../images/banner.png) no-repeat fixed;
       background-position: center;
       background-size: cover; }
