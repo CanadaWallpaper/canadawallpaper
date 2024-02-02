@@ -1,88 +1,96 @@
-const slider = document.querySelector(".product-slider");
-const nextBtn = document.querySelector(".next-button");
-const prevBtn = document.querySelector(".previous-button");
-const product = document.querySelectorAll(".product-card");
+//carousel
 
-let product_page = Math.ceil(product.length / 4);
-let l = 0;
+const wrapper = document.querySelector(".slider-wrapper");
+const carousel = document.querySelector(".products");
+const firstCardWidth = carousel.querySelector(".product-card").offsetWidth;
+const arrowBtns = document.querySelectorAll(".slider-wrapper i");
+const carouselChildrens = [...carousel.children];
 
-let movePer = 25;
-let maxMove = Math.ceil(product.length - 4) * 25;
+let isDragging = false,
+  isAutoPlay = true,
+  startX,
+  startScrollLeft,
+  timeoutId;
 
-let mob_view1024 = window.matchMedia("(max-width: 1024px)");
-let mob_view800 = window.matchMedia("(max-width: 800px)");
+// Get the number of cards that can fit in the carousel at once
+let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
 
-// Update the movePer and maxMove values for different screen sizes
-function updateSliderConfig() {
-  if (mob_view800.matches) {
-    movePer = 100;
-    maxMove = Math.ceil(product.length - 1) * 100;
-  } else if (mob_view1024.matches) {
-    movePer = 50;
-    maxMove = Math.ceil(product.length - 2) * 50;
-  } else {
-    movePer = 25;
-    maxMove = Math.ceil(product.length - 4) * 25;
-  }
-}
+// Insert copies of the last few cards to beginning of carousel for infinite scrolling
+carouselChildrens
+  .slice(-cardPerView)
+  .reverse()
+  .forEach((card) => {
+    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+  });
 
-// Automatic slider functionality
-let intervalId; // Variable to store the interval ID
-
-function startSlider() {
-  intervalId = setInterval(() => {
-    right_mover();
-  }, 3000); // Adjust the interval duration (e.g., 3000 milliseconds or 3 seconds)
-}
-
-function stopSlider() {
-  clearInterval(intervalId);
-}
-
-// Pause on hover functionality
-slider.addEventListener("mouseenter", stopSlider);
-slider.addEventListener("mouseleave", startSlider);
-
-// Right and left mover functions
-let right_mover = () => {
-  l = l + movePer;
-
-  if (l > maxMove) {
-    l = 0;
-  }
-
-  for (const i of product) {
-    i.style.left = "-" + l + "%";
-  }
-};
-
-let left_mover = () => {
-  l = l - movePer;
-
-  if (l < 0) {
-    l = maxMove;
-  }
-
-  for (const i of product) {
-    i.style.left = "-" + l + "%";
-  }
-};
-
-// Update slider configuration when the window is resized
-window.addEventListener("resize", () => {
-  updateSliderConfig();
-  left_mover(); // Ensure the left_mover reflects the updated configuration
+// Insert copies of the first few cards to end of carousel for infinite scrolling
+carouselChildrens.slice(0, cardPerView).forEach((card) => {
+  carousel.insertAdjacentHTML("beforeend", card.outerHTML);
 });
 
-// Initial setup
-updateSliderConfig();
-startSlider(); // Start the automatic slider
+// Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+carousel.classList.add("no-transition");
+carousel.scrollLeft = carousel.offsetWidth;
+carousel.classList.remove("no-transition");
 
-// Click event listeners for next and previous buttons
-nextBtn.onclick = () => {
-  right_mover();
+// Add event listeners for the arrow buttons to scroll the carousel left and right
+arrowBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+  });
+});
+
+const dragStart = (e) => {
+  isDragging = true;
+  carousel.classList.add("dragging");
+  // Records the initial cursor and scroll position of the carousel
+  startX = e.pageX;
+  startScrollLeft = carousel.scrollLeft;
 };
 
-prevBtn.onclick = () => {
-  left_mover();
+const dragging = (e) => {
+  if (!isDragging) return; // if isDragging is false return from here
+  // Updates the scroll position of the carousel based on the cursor movement
+  carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
 };
+
+const dragStop = () => {
+  isDragging = false;
+  carousel.classList.remove("dragging");
+};
+
+const infiniteScroll = () => {
+  // If the carousel is at the beginning, scroll to the end
+  if (carousel.scrollLeft === 0) {
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.offsetWidth;
+    carousel.classList.remove("no-transition");
+  }
+  // If the carousel is at the end, scroll to the beginning
+  else if (
+    Math.ceil(carousel.scrollLeft) ===
+    carousel.scrollWidth - carousel.offsetWidth
+  ) {
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.offsetWidth;
+    carousel.classList.remove("no-transition");
+  }
+
+  // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+  clearTimeout(timeoutId);
+  if (!wrapper.matches(":hover")) autoPlay();
+};
+
+const autoPlay = () => {
+  if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+  // Autoplay the carousel after every 2500 ms
+  timeoutId = setTimeout(() => (carousel.scrollLeft += firstCardWidth), 2500);
+};
+autoPlay();
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infiniteScroll);
+wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+wrapper.addEventListener("mouseleave", autoPlay);

@@ -51,6 +51,15 @@ body {
   padding: 5px 5px;
   color: crimson; }
 
+.dragging > * {
+  cursor: grab;
+  user-select: none;
+  scroll-behavior: auto;
+  scroll-snap-type: none; }
+
+.no-transition {
+  scroll-behavior: auto; }
+
 .app-header {
   display: flex;
   width: 100%;
@@ -191,7 +200,8 @@ body {
       display: flex;
       justify-content: center;
       width: 100%;
-      background: #1e1e1e; }
+      background: #1e1e1e;
+      margin-bottom: 70px; }
       .app-main .main-container .main-collection-container .collection-menu .container ul {
         display: flex;
         align-items: center;
@@ -202,38 +212,82 @@ body {
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          margin: 0 10px;
+          margin-right: 80px;
           transition: 0.5s; }
           .app-main .main-container .main-collection-container .collection-menu .container ul li:hover {
             color: crimson; }
-    .app-main .main-container .main-collection-container .container .product-container {
+          .app-main .main-container .main-collection-container .collection-menu .container ul li:last-child {
+            margin-right: 0px; }
+    .app-main .main-container .main-collection-container:hover > .container > i {
+      transform: scale(1); }
+    .app-main .main-container .main-collection-container .container {
       display: flex;
-      display: none;
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
-      padding: 25px;
-      margin-top: 25px; }
-      .app-main .main-container .main-collection-container .container .product-container > i {
-        padding: 15px;
-        transform: scale(0);
-        font-size: 30px;
-        cursor: pointer;
-        transition: 0.5s; }
-        .app-main .main-container .main-collection-container .container .product-container > i:hover {
-          color: crimson; }
-      .app-main .main-container .main-collection-container .container .product-container:hover > i {
-        transform: scale(1); }
-      .app-main .main-container .main-collection-container .container .product-container .product-slider {
-        display: flex;
-        overflow: hidden;
+      justify-content: center;
+      align-items: center; }
+      .app-main .main-container .main-collection-container .container .product-slider {
         width: 100%; }
-        .app-main .main-container .main-collection-container .container .product-container .product-slider .product-cards {
+        .app-main .main-container .main-collection-container .container .product-slider .products {
+          scroll-snap-align: start;
           width: 100%;
-          display: flex;
-          transition: transform 0.5s ease-in-out; }
-          .app-main .main-container .main-collection-container .container .product-container .product-slider .product-cards .product-card {
-            flex: 0 0 calc(25% - 20px); }
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: calc((100% / 4) - 12px);
+          grid-gap: 16px;
+          overflow-x: auto;
+          scroll-snap-type: mandatory;
+          scroll-behavior: smooth;
+          scrollbar-width: 0; }
+          .app-main .main-container .main-collection-container .container .product-slider .products::-webkit-scrollbar {
+            display: none; }
+          .app-main .main-container .main-collection-container .container .product-slider .products .product-card {
+            width: 100%;
+            transition: 0.5s ease-in-out;
+            border-radius: 15px;
+            border: 1px solid #fff;
+            overflow: hidden;
+            padding-bottom: 3px;
+            cursor: pointer; }
+            .app-main .main-container .main-collection-container .container .product-slider .products .product-card:hover .product-image img {
+              transform: scale(1.6); }
+            .app-main .main-container .main-collection-container .container .product-slider .products .product-card .product-image {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 200px;
+              overflow: hidden; }
+              .app-main .main-container .main-collection-container .container .product-slider .products .product-card .product-image img {
+                object-position: center;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                transition: 1s; }
+            .app-main .main-container .main-collection-container .container .product-slider .products .product-card .product-info {
+              padding: 15px; }
+              .app-main .main-container .main-collection-container .container .product-slider .products .product-card .product-info h6 {
+                font-size: 15px; }
+              .app-main .main-container .main-collection-container .container .product-slider .products .product-card .product-info p {
+                font-size: 12px;
+                margin: 10px 0; }
+            .app-main .main-container .main-collection-container .container .product-slider .products .product-card .button-shop {
+              width: 100%;
+              display: flex;
+              justify-content: end;
+              font-size: 12px;
+              padding: 15px 20px;
+              margin: 0;
+              border: none; }
+              .app-main .main-container .main-collection-container .container .product-slider .products .product-card .button-shop i {
+                margin: 0 5px; }
+      .app-main .main-container .main-collection-container .container > i {
+        z-index: 100;
+        padding: 10px;
+        transform: scale(0);
+        font-size: 28px;
+        cursor: pointer;
+        transition: 1s; }
+        .app-main .main-container .main-collection-container .container > i:hover {
+          color: crimson; }
 
 .button-shop {
   display: inline-flex;
@@ -253,77 +307,6 @@ body {
     border: 1px solid crimson;
     color: crimson; }
 
-.container .product-slider {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-top: 50px;
-  overflow: hidden;
-  padding: 0 20px; }
-  .container .product-slider .products {
-    display: flex;
-    width: 100%;
-    padding: 25px 0;
-    margin: auto;
-    align-items: center;
-    overflow-x: auto; }
-    .container .product-slider .products::-webkit-scrollbar {
-      display: none; }
-    .container .product-slider .products .product-card {
-      min-width: 24%;
-      margin: 0 1% 0 0;
-      position: relative;
-      left: 0;
-      transition: 0.5s ease-in-out;
-      border-radius: 15px;
-      border: 1px solid #fff;
-      overflow: hidden;
-      padding-bottom: 3px;
-      cursor: pointer; }
-      .container .product-slider .products .product-card:hover .product-image img {
-        transform: scale(1.6); }
-      .container .product-slider .products .product-card .product-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 200px;
-        overflow: hidden; }
-        .container .product-slider .products .product-card .product-image img {
-          object-position: center;
-          object-fit: cover;
-          width: 100%;
-          height: 100%;
-          transition: 1s; }
-      .container .product-slider .products .product-card .product-info {
-        padding: 15px; }
-        .container .product-slider .products .product-card .product-info h6 {
-          font-size: 15px; }
-        .container .product-slider .products .product-card .product-info p {
-          font-size: 12px;
-          margin: 10px 0; }
-      .container .product-slider .products .product-card .button-shop {
-        width: 100%;
-        display: flex;
-        justify-content: end;
-        font-size: 12px;
-        padding: 15px 20px;
-        margin: 0;
-        border: none; }
-        .container .product-slider .products .product-card .button-shop i {
-          margin: 0 5px; }
-  .container .product-slider > i {
-    z-index: 100;
-    padding: 10px;
-    transform: scale(0);
-    font-size: 25px;
-    cursor: pointer;
-    transition: 0.5s; }
-    .container .product-slider > i:hover {
-      color: crimson; }
-  .container .product-slider:hover > i {
-    transform: scale(1); }
-
 @media (max-width: 1024px) {
   .app-header .header-container .hero-contents {
     display: flex;
@@ -342,9 +325,8 @@ body {
         text-align: end;
         max-width: 400px;
         font-size: 15px; }
-  .app-main .main-container .main-collection-container .container .product-slider .products .product-card {
-    min-width: 49%;
-    margin: 0 1% 0 0; } }
+  .app-main .main-container .main-collection-container .container .product-slider .products {
+    grid-auto-columns: calc((100% / 3) - 12px); } }
 
 @media (max-width: 800px) {
   .app-header {
@@ -368,6 +350,26 @@ body {
         margin: 20px 0; }
       .app-header .header-container .hero-contents .container .hero-content-inner .button-shop {
         align-self: center; }
-  .app-main .main-container .main-collection-container .container .product-slider .products .product-card {
-    min-width: 99%;
-    margin: 0 1% 0 0; } }
+  .app-main .main-container .main-collection-container .container {
+    padding: 0 5px; }
+    .app-main .main-container .main-collection-container .container .product-slider {
+      padding: 0 10px; }
+      .app-main .main-container .main-collection-container .container .product-slider .products {
+        grid-auto-columns: calc((100% / 2) - 12px); }
+    .app-main .main-container .main-collection-container .container i {
+      transform: scale(1);
+      font-size: 20px; } }
+
+@media (max-width: 550px) {
+  .app-main .main-container .main-collection-container .collection-menu .container ul {
+    padding: 15px 10px; }
+    .app-main .main-container .main-collection-container .collection-menu .container ul li {
+      margin-right: 35px;
+      font-size: 12px; }
+  .app-main .main-container .main-collection-container .container {
+    padding: 0 15px; }
+    .app-main .main-container .main-collection-container .container .product-slider {
+      padding: 0 10px; }
+      .app-main .main-container .main-collection-container .container .product-slider .products {
+        padding: 0 15px;
+        grid-auto-columns: calc((100% / 1)); } }

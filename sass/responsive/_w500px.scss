@@ -1,0 +1,32 @@
+@media (max-width: 550px) {
+  //main
+  .app-main {
+    .main-container {
+      .main-collection-container {
+        // menu
+        .collection-menu {
+          .container {
+            ul {
+              padding: 15px 10px;
+              li {
+                margin-right: 35px;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        // products
+        .container {
+          padding: 0 15px;
+          .product-slider {
+            padding: 0 10px;
+            .products {
+              padding: 0 15px;
+              grid-auto-columns: calc((100% / 1));
+            }
+          }
+        }
+      }
+    }
+  }
+}
