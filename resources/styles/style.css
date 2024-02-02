@@ -378,7 +378,11 @@ body {
             align-items: center; }
             .app-main .main-container .main-brands-container .container .brand-slider .brands .brand-card-wrapper .brand-card img {
               max-width: 250px;
-              width: 100%; }
+              width: 100%;
+              transition: 0.7s;
+              cursor: pointer; }
+              .app-main .main-container .main-brands-container .container .brand-slider .brands .brand-card-wrapper .brand-card img:hover {
+                transform: scale(1.2); }
       .app-main .main-container .main-brands-container .container > i {
         z-index: 100;
         padding: 5px;

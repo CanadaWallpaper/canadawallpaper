@@ -297,6 +297,11 @@
                 img {
                   max-width: 250px;
                   width: 100%;
+                  transition: 0.7s;
+                  cursor: pointer;
+                  &:hover {
+                    transform: scale(1.2);
+                  }
                 }
               }
             }
