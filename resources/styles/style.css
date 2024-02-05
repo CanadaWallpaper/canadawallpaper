@@ -509,17 +509,21 @@ html {
       color: #fff; }
     .app-footer .footer-container .copyright i {
       margin: 0 5px; }
-    .app-footer .footer-container .social-links a {
+    .app-footer .footer-container .social-links a,
+    .app-footer .footer-container .payments a {
       color: #fff; }
-      .app-footer .footer-container .social-links a i {
+      .app-footer .footer-container .social-links a i,
+      .app-footer .footer-container .payments a i {
         font-size: 25px;
         padding: 5px;
         margin: 0 5px;
         transition: 1s; }
-        .app-footer .footer-container .social-links a i:hover {
+        .app-footer .footer-container .social-links a i:hover,
+        .app-footer .footer-container .payments a i:hover {
           transform: rotate(360deg) scale(1.5);
           color: crimson; }
-    .app-footer .footer-container .social-links span {
+    .app-footer .footer-container .social-links span,
+    .app-footer .footer-container .payments span {
       padding: 0 10px; }
 
 .button-shop {
