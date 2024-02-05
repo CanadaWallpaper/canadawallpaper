@@ -94,4 +94,20 @@
       }
     }
   }
+
+  // footer
+  .app-footer {
+    .footer-container {
+      flex-direction: column;
+
+      .copyright {
+        order: 2;
+        margin-bottom: 10px;
+      }
+      .social-links {
+        order: 1;
+        margin-bottom: 10px;
+      }
+    }
+  }
 }

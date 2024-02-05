@@ -519,6 +519,8 @@ html {
         .app-footer .footer-container .social-links a i:hover {
           transform: rotate(360deg) scale(1.5);
           color: crimson; }
+    .app-footer .footer-container .social-links span {
+      padding: 0 10px; }
 
 .button-shop {
   display: inline-flex;
@@ -599,9 +601,17 @@ html {
       transform: scale(1);
       font-size: 20px; }
   .app-main .main-container .main-brands-container .container .brand-slider .brands {
-    grid-auto-columns: calc(100% / 3); } }
+    grid-auto-columns: calc(100% / 3); }
+  .app-footer .footer-container {
+    flex-direction: column; }
+    .app-footer .footer-container .copyright {
+      order: 2;
+      margin-bottom: 10px; }
+    .app-footer .footer-container .social-links {
+      order: 1;
+      margin-bottom: 10px; } }
 
-@media (max-width: 570px) {
+@media (max-width: 550px) {
   .app-main .main-container .main-collection-container .collection-menu .container ul {
     padding: 15px 10px; }
     .app-main .main-container .main-collection-container .collection-menu .container ul li {
@@ -615,12 +625,4 @@ html {
     grid-auto-columns: calc(100% / 2); }
   .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-form form {
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 10px; }
-  .app-footer .footer-container {
-    flex-direction: column; }
-    .app-footer .footer-container .copyright {
-      order: 2;
-      margin-bottom: 10px; }
-    .app-footer .footer-container .social-links {
-      order: 1;
-      margin-bottom: 10px; } }
+    grid-gap: 10px; } }
