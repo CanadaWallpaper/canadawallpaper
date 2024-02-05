@@ -296,45 +296,6 @@ body {
         .app-main .main-container .main-collection-container .container > i:hover {
           opacity: 1;
           color: crimson; }
-    .app-main .main-container .main-collection-container .brand-slider-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0 35px;
-      margin-top: 150px; }
-      .app-main .main-container .main-collection-container .brand-slider-wrapper .brand-slider {
-        width: 100%; }
-        .app-main .main-container .main-collection-container .brand-slider-wrapper .brand-slider .brands {
-          scroll-snap-align: start;
-          width: 100%;
-          display: grid;
-          grid-auto-flow: column;
-          grid-auto-columns: calc(100% / 5);
-          grid-gap: 0px;
-          align-items: center;
-          overflow-x: auto;
-          scroll-snap-type: mandatory;
-          scroll-behavior: smooth;
-          scrollbar-width: 0; }
-          .app-main .main-container .main-collection-container .brand-slider-wrapper .brand-slider .brands::-webkit-scrollbar {
-            display: none; }
-          .app-main .main-container .main-collection-container .brand-slider-wrapper .brand-slider .brands .brand-card-wrapper {
-            width: 90%;
-            display: flex;
-            justify-content: center;
-            align-items: center; }
-            .app-main .main-container .main-collection-container .brand-slider-wrapper .brand-slider .brands .brand-card-wrapper .brand-card img {
-              width: 100%; }
-      .app-main .main-container .main-collection-container .brand-slider-wrapper > i {
-        z-index: 100;
-        padding: 5px;
-        font-size: 20px;
-        cursor: pointer;
-        transition: 1s;
-        opacity: 0.5; }
-        .app-main .main-container .main-collection-container .brand-slider-wrapper > i:hover {
-          opacity: 1;
-          color: crimson; }
   .app-main .main-container .main-brands-container {
     width: 100%;
     display: flex;
@@ -395,13 +356,143 @@ body {
           color: crimson; }
   .app-main .main-container .main-banner-container {
     width: 100%;
-    margin-bottom: 2000px; }
+    margin-bottom: 100px; }
     .app-main .main-container .main-banner-container .main-banner {
       width: 100%;
       min-height: 700px;
       background: linear-gradient(black, rgba(0, 0, 0, 0.5), black), url(../images/banner.png) no-repeat fixed;
       background-position: center;
       background-size: cover; }
+  .app-main .main-container .main-best-seller-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 125px;
+    margin-bottom: 100px; }
+    .app-main .main-container .main-best-seller-container .container .main-best-seller {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+    .app-main .main-container .main-best-seller-container .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 35px; }
+      .app-main .main-container .main-best-seller-container .container .best-seller-slider {
+        width: 100%; }
+        .app-main .main-container .main-best-seller-container .container .best-seller-slider .best-seller {
+          scroll-snap-align: start;
+          width: 100%;
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: calc(100% / 10);
+          grid-gap: 0px;
+          align-items: center;
+          overflow-x: auto;
+          scroll-snap-type: mandatory;
+          scroll-behavior: smooth;
+          scrollbar-width: 0; }
+          .app-main .main-container .main-best-seller-container .container .best-seller-slider .best-seller::-webkit-scrollbar {
+            display: none; }
+          .app-main .main-container .main-best-seller-container .container .best-seller-slider .best-seller .best-seller-card-wrapper {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 400px; }
+            .app-main .main-container .main-best-seller-container .container .best-seller-slider .best-seller .best-seller-card-wrapper .best-seller-card {
+              height: 100%;
+              width: 100%; }
+              .app-main .main-container .main-best-seller-container .container .best-seller-slider .best-seller .best-seller-card-wrapper .best-seller-card img {
+                max-width: 150px;
+                height: 100%;
+                width: 100%;
+                transition: 0.7s;
+                object-fit: cover;
+                cursor: pointer; }
+                .app-main .main-container .main-best-seller-container .container .best-seller-slider .best-seller .best-seller-card-wrapper .best-seller-card img:hover {
+                  transform: scale(1.2); }
+      .app-main .main-container .main-best-seller-container .container > i {
+        z-index: 100;
+        padding: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 1s;
+        opacity: 0.5; }
+        .app-main .main-container .main-best-seller-container .container > i:hover {
+          opacity: 1;
+          color: crimson; }
+  .app-main .main-container .main-get-in-touch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    border-bottom: 2px solid #f5f5f559;
+    padding-bottom: 100px; }
+    .app-main .main-container .main-get-in-touch-container .container {
+      padding: 20px; }
+      .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between; }
+        .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content {
+          margin-top: 30px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 60px; }
+          .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: #fff; }
+            .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-description p {
+              text-align: justify;
+              margin-bottom: 15px; }
+            .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-description i {
+              margin: 10px; }
+            .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-description a {
+              color: #fff; }
+            .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-description .get-in-touch-address,
+            .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-description .get-in-touch-email,
+            .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-description .get-in-touch-phone {
+              margin: 10px 0;
+              display: flex;
+              align-items: center; }
+          .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-form form {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px; }
+            .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-form form > * {
+              height: 40px;
+              padding: 10px;
+              border: 1px solid #fff;
+              background: none;
+              outline: none;
+              color: #fff;
+              border-radius: 10px;
+              font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+            .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-form form button {
+              grid-column: 1/-1;
+              height: 45px;
+              cursor: pointer;
+              transition: 0.5s; }
+              .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-form form button:hover {
+                border: 1px solid crimson;
+                color: crimson; }
+            .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-form form textarea {
+              grid-column: 1/-1;
+              height: 130px;
+              resize: none; }
 
 .button-shop {
   display: inline-flex;
@@ -442,7 +533,10 @@ body {
   .app-main .main-container .main-collection-container .container .product-slider .products {
     grid-auto-columns: calc(100% / 3); }
   .app-main .main-container .main-brands-container .container .brand-slider .brands {
-    grid-auto-columns: calc(100% / 4); } }
+    grid-auto-columns: calc(100% / 4); }
+  .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px; } }
 
 @media (max-width: 800px) {
   .app-header {
@@ -492,4 +586,7 @@ body {
     .app-main .main-container .main-collection-container .container .product-slider .products {
       grid-auto-columns: calc(100% / 1); }
   .app-main .main-container .main-brands-container .container .brand-slider .brands {
-    grid-auto-columns: calc(100% / 2); } }
+    grid-auto-columns: calc(100% / 2); }
+  .app-main .main-container .main-get-in-touch-container .container .main-get-in-touch .get-in-touch-content .get-in-touch-form form {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px; } }

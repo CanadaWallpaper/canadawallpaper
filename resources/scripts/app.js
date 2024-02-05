@@ -153,12 +153,12 @@ const brandSlider = () => {
   brandsPreviousButton.addEventListener("click", previousSlider);
 
   window.addEventListener("resize", function () {
-    var pageWidth = window.innerWidth;
+    // var pageWidth = window.innerWidth;
 
     brandsSlider.scrollLeft = 0;
     // Your code to handle width change goes here
-    console.log(getBrndsCardWidth());
-    console.log(pageWidth);
+    // console.log(getBrndsCardWidth());
+    // console.log(pageWidth);
   });
 
   // const brandSlider = () => {
@@ -195,3 +195,114 @@ const brandSlider = () => {
   //-END-// brand slider ////////////////////////////////////////////////////////////////////////////////
 };
 brandSlider();
+//-END-// brand slider ////////////////////////////////////////////////////////////////////////////////
+
+//----------------------------------------------------------------------------------------------------------
+
+//-START-// best seller slider ///////////////////////////////////////////////////////////////////////////////////
+
+const bestSellerSliderWrapper = document.querySelector(
+  ".main-best-seller-container .best-seller-slider-wrapper"
+);
+const bestSellerSlider = document.querySelector(
+  ".main-best-seller-container .best-seller"
+);
+const bestSellerPreviousButton = document.querySelector(
+  ".main-best-seller-container .previous-button-best-seller"
+);
+const bestSellerNextButton = document.querySelector(
+  ".main-best-seller-container .next-button-best-seller"
+);
+const sliderbestSellers = [...bestSellerSlider.children];
+var isPausedBestSller = false;
+
+const bestSellersSlider = () => {
+  const getBestSellerCardWidth = () => {
+    const bestSellerCardWidth = document.querySelector(
+      ".main-best-seller-container  .best-seller-card-wrapper"
+    ).offsetWidth;
+    console.log(bestSellerCardWidth);
+    return bestSellerCardWidth;
+  };
+
+  // next slide function
+  const nextSlider = () => {
+    if (bestSellerSlider.scrollLeft === 0) {
+      bestSellerSlider.scrollLeft = getBestSellerCardWidth();
+    } else if (
+      Math.floor(bestSellerSlider.scrollLeft / getBestSellerCardWidth()) + 11 >=
+      sliderbestSellers.length
+    ) {
+      bestSellerSlider.scrollLeft = 0;
+    } else {
+      bestSellerSlider.scrollLeft =
+        Math.floor(bestSellerSlider.scrollLeft / getBestSellerCardWidth()) *
+          getBestSellerCardWidth() +
+        getBestSellerCardWidth();
+    }
+    // console.log(bestSellerSlider.scrollLeft);
+  };
+
+  // previous slide function
+  const previousSlider = () => {
+    if (bestSellerSlider.scrollLeft === 0) {
+      bestSellerSlider.scrollLeft =
+        sliderbestSellers.length * getBestSellerCardWidth();
+    } else {
+      bestSellerSlider.scrollLeft =
+        Math.ceil(bestSellerSlider.scrollLeft / getBestSellerCardWidth()) *
+          getBestSellerCardWidth() -
+        getBestSellerCardWidth();
+    }
+  };
+
+  bestSellerNextButton.addEventListener("click", nextSlider);
+  bestSellerPreviousButton.addEventListener("click", previousSlider);
+
+  window.addEventListener("resize", function () {
+    var pageWidth = window.innerWidth;
+
+    bestSellerSlider.scrollLeft = 0;
+    // Your code to handle width change goes here
+    // console.log(getBestSellerCardWidth());
+    // console.log(pageWidth);
+  });
+
+  // const bestSellersSlider = () => {
+  //   let intervalId;
+
+  //   const startInterval = () => {
+  //     intervalId = setInterval(() => {
+  //       nextSlider();
+  //     }, 2500);
+  //   };
+
+  //   const pauseInterval = () => {
+  //     clearInterval(intervalId);
+  //   };
+
+  //   startInterval(); // Start the interval initially
+
+  //   bestSellerSliderWrapper.addEventListener("mouseenter", () => {
+  //     isPausedBestSller = true;
+  //     pauseInterval();
+  //   });
+
+  //   bestSellerSliderWrapper.addEventListener("mouseleave", () => {
+  //     isPausedBestSller = false;
+  //     startInterval();
+  //   });
+  // };
+
+  // window.addEventListener("resize", function () {
+  //   bestSellerSlider.scrollLeft = 0;
+  // });
+
+  // // window load events
+  // window.addEventListener("load", () => {
+  //   bestSellersSlider();
+  // });
+};
+bestSellersSlider();
+
+//-END-// best seller slider ////////////////////////////////////////////////////////////////////////////////
