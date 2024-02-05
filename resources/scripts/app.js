@@ -33,7 +33,7 @@ const collectionSlider = () => {
     } else {
       slider.scrollLeft =
         Math.floor(slider.scrollLeft / getProductsCardWidth()) *
-          getProductsCardWidth() +
+        getProductsCardWidth() +
         getProductsCardWidth();
     }
   };
@@ -45,7 +45,7 @@ const collectionSlider = () => {
     } else {
       slider.scrollLeft =
         Math.ceil(slider.scrollLeft / getProductsCardWidth()) *
-          getProductsCardWidth() -
+        getProductsCardWidth() -
         getProductsCardWidth();
     }
   };
@@ -58,8 +58,8 @@ const collectionSlider = () => {
 
     slider.scrollLeft = 0;
     // Your code to handle width change goes here
-    console.log(getProductsCardWidth());
-    console.log(pageWidth);
+    // console.log(getProductsCardWidth());
+    // console.log(pageWidth);
   });
 
   const productSlider = () => {
@@ -132,7 +132,7 @@ const brandSlider = () => {
     } else {
       brandsSlider.scrollLeft =
         Math.floor(brandsSlider.scrollLeft / getBrndsCardWidth()) *
-          getBrndsCardWidth() +
+        getBrndsCardWidth() +
         getBrndsCardWidth();
     }
   };
@@ -144,7 +144,7 @@ const brandSlider = () => {
     } else {
       brandsSlider.scrollLeft =
         Math.ceil(brandsSlider.scrollLeft / getBrndsCardWidth()) *
-          getBrndsCardWidth() -
+        getBrndsCardWidth() -
         getBrndsCardWidth();
     }
   };
@@ -237,7 +237,7 @@ const bestSellersSlider = () => {
     } else {
       bestSellerSlider.scrollLeft =
         Math.floor(bestSellerSlider.scrollLeft / getBestSellerCardWidth()) *
-          getBestSellerCardWidth() +
+        getBestSellerCardWidth() +
         getBestSellerCardWidth();
     }
     // console.log(bestSellerSlider.scrollLeft);
@@ -251,7 +251,7 @@ const bestSellersSlider = () => {
     } else {
       bestSellerSlider.scrollLeft =
         Math.ceil(bestSellerSlider.scrollLeft / getBestSellerCardWidth()) *
-          getBestSellerCardWidth() -
+        getBestSellerCardWidth() -
         getBestSellerCardWidth();
     }
   };
@@ -306,3 +306,6 @@ const bestSellersSlider = () => {
 bestSellersSlider();
 
 //-END-// best seller slider ////////////////////////////////////////////////////////////////////////////////
+
+
+
