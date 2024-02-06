@@ -526,6 +526,159 @@ html {
     .app-footer .footer-container .payments span {
       padding: 0 10px; }
 
+.calculator {
+  background: #fff;
+  color: #000;
+  font-size: 15px; }
+  .calculator button {
+    cursor: pointer; }
+  .calculator .header {
+    padding: 20px 0;
+    font-size: 25px;
+    text-align: center;
+    margin: 0 auto; }
+  .calculator .main {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column; }
+    .calculator .main .add-new-button {
+      width: 100%;
+      padding-bottom: 50px;
+      border-bottom: 2px solid #000; }
+      .calculator .main .add-new-button button {
+        padding: 8px 15px;
+        border: 1px solid crimson;
+        outline: none;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 10px;
+        background: transparent;
+        color: crimson;
+        transition: 0.5s;
+        font-size: 11px; }
+        .calculator .main .add-new-button button:hover {
+          color: #fff;
+          background: crimson; }
+        .calculator .main .add-new-button button:last-child {
+          background: crimson;
+          color: #fff; }
+    .calculator .main .add-new-field {
+      width: 100%;
+      margin-top: 50px;
+      padding-bottom: 100px;
+      border-bottom: 2px solid #000; }
+      .calculator .main .add-new-field form {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+        justify-content: space-between;
+        align-items: start; }
+        .calculator .main .add-new-field form input,
+        .calculator .main .add-new-field form .drop-down-lists,
+        .calculator .main .add-new-field form button {
+          height: 50px;
+          border: 1px solid #000;
+          color: #000;
+          background: transparent;
+          outline: none;
+          padding: 10px;
+          border-radius: 10px; }
+        .calculator .main .add-new-field form input::placeholder {
+          color: #000; }
+        .calculator .main .add-new-field form .drop-down-lists {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: #000;
+          cursor: pointer; }
+          .calculator .main .add-new-field form .drop-down-lists i {
+            font-size: 15px;
+            padding: 5px;
+            pointer-events: none; }
+        .calculator .main .add-new-field form .size-input {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+          .calculator .main .add-new-field form .size-input > input {
+            flex-grow: 1; }
+          .calculator .main .add-new-field form .size-input div {
+            display: flex;
+            margin-left: 15px;
+            align-items: center; }
+            .calculator .main .add-new-field form .size-input div input {
+              width: 50px; }
+            .calculator .main .add-new-field form .size-input div i {
+              display: flex;
+              align-items: center;
+              font-size: 28px;
+              margin: 0 2px;
+              transform: rotate(90deg); }
+        .calculator .main .add-new-field form button[type="submit"] {
+          background-color: green;
+          border-color: green;
+          color: #fff;
+          font-size: 15px; }
+        .calculator .main .add-new-field form button[type="reset"] {
+          background-color: crimson;
+          border-color: crimson;
+          color: #fff;
+          font-size: 15px; }
+    .calculator .main .customer-invoice .information {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); }
+      .calculator .main .customer-invoice .information .information-contents {
+        display: flex;
+        flex-direction: column;
+        margin: 25px 0; }
+        .calculator .main .customer-invoice .information .information-contents span {
+          margin-bottom: 5px; }
+    .calculator .main .customer-invoice .table-information {
+      display: flex;
+      width: 100%;
+      border: 2px solid #000;
+      border-radius: 25px;
+      overflow: hidden;
+      padding: 25px; }
+      .calculator .main .customer-invoice .table-information .table {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        overflow-x: scroll;
+        white-space: nowrap;
+        padding-bottom: 25px; }
+        .calculator .main .customer-invoice .table-information .table .table-header,
+        .calculator .main .customer-invoice .table-information .table .table-info {
+          min-width: 100%;
+          width: fit-content;
+          display: flex;
+          flex-wrap: nowrap;
+          background: #000;
+          color: #fff;
+          padding: 10px 0;
+          border-radius: 10px; }
+          .calculator .main .customer-invoice .table-information .table .table-header span,
+          .calculator .main .customer-invoice .table-information .table .table-info span {
+            text-align: center;
+            text-wrap: nowrap;
+            padding: 10px;
+            min-width: 160px; }
+            .calculator .main .customer-invoice .table-information .table .table-header span:nth-child(1),
+            .calculator .main .customer-invoice .table-information .table .table-info span:nth-child(1) {
+              min-width: 30px;
+              width: 50px; }
+        .calculator .main .customer-invoice .table-information .table .table-info {
+          background: #fff;
+          color: #000;
+          padding: 12px 10px;
+          border-bottom: 1px solid rgba(128, 128, 128, 0.274);
+          border-radius: 0px; }
+
 .button-shop {
   display: inline-flex;
   padding: 10px;
