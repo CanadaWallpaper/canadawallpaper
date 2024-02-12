@@ -1,196 +1,243 @@
 .calculator {
+  width: 100%;
   background: $light-color;
   color: $dark-color;
   font-size: 15px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-  button {
-    cursor: pointer;
-  }
-  .header {
-    padding: 20px 0;
-    font-size: 25px;
-    text-align: center;
+  .container {
+    max-width: 99%;
     margin: 0 auto;
-  }
-
-  .main {
-    padding: 30px;
-    width: 100%;
-
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-
-    .add-new-button {
-      width: 100%;
-      padding-bottom: 50px;
-      border-bottom: 2px solid $dark-color;
-      button {
-        padding: 8px 15px;
-        border: 1px solid $primary-color;
-        outline: none;
-        margin: 0 5px;
-        cursor: pointer;
-        border-radius: 10px;
-        background: transparent;
-        color: $primary-color;
-        transition: 0.5s;
-        font-size: 11px;
-
-        &:hover {
-          color: $light-color;
-          background: $primary-color;
-        }
-        &:last-child {
-          background: $primary-color;
-          color: $light-color;
-        }
-      }
+    button {
+      cursor: pointer;
+    }
+    .header {
+      padding: 20px 0;
+      font-size: 25px;
+      text-align: center;
+      margin: 0 auto;
     }
 
-    .add-new-field {
+    .main {
+      padding: 30px;
       width: 100%;
-      margin-top: 50px;
-      padding-bottom: 100px;
-      border-bottom: 2px solid $dark-color;
-      form {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 15px;
-        // flex-direction: column;
-        justify-content: space-between;
-        align-items: start;
 
-        input,
-        .drop-down-lists,
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+
+      .add-new-button {
+        width: 100%;
+        padding-bottom: 50px;
+        border-bottom: 2px solid $dark-color;
         button {
-          // width: 250px;
-          height: 50px;
-          border: 1px solid $dark-color;
-          color: $dark-color;
-          background: transparent;
+          padding: 8px 15px;
+          border: 1px solid $primary-color;
           outline: none;
-          padding: 10px;
-          border-radius: 10px;
-        }
-        input::placeholder {
-          color: $dark-color;
-        }
-
-        .drop-down-lists {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          color: $dark-color;
+          margin: 0 5px;
           cursor: pointer;
-          i {
-            font-size: 15px;
-            padding: 5px;
-            pointer-events: none;
-          }
-        }
-        .size-input {
-          width: 100%;
-          display: flex;
-          // display: grid;
-          // grid-template-columns: repeat(2, 1fr);
-          // grid-gap: 10px;
-          align-items: center;
-          justify-content: space-between;
-          & > input {
-            flex-grow: 1;
-          }
-          div {
-            display: flex;
-            margin-left: 15px;
-            align-items: center;
-            input {
-              width: 50px;
-            }
-            i {
-              display: flex;
-              align-items: center;
-              font-size: 28px;
-              margin: 0 2px;
-              transform: rotate(90deg);
-            }
-          }
-        }
-        button[type="submit"] {
-          background-color: green;
-          border-color: green;
-          color: $light-color;
-          font-size: 15px;
-        }
-        button[type="reset"] {
-          background-color: $primary-color;
-          border-color: $primary-color;
-          color: $light-color;
-          font-size: 15px;
-        }
-      }
-    }
+          border-radius: 10px;
+          background: transparent;
+          color: $primary-color;
+          transition: 0.5s;
+          font-size: 11px;
 
-    .customer-invoice {
-      .information {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        .information-contents {
-          display: flex;
-          flex-direction: column;
-          margin: 25px 0;
-          span {
-            margin-bottom: 5px;
-          }
-        }
-      }
-
-      .table-information {
-        display: flex;
-        width: 100%;
-        border: 2px solid $dark-color;
-        border-radius: 25px;
-        overflow: hidden;
-        padding: 25px;
-        .table {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: start;
-          overflow-x: scroll;
-          white-space: nowrap;
-          padding-bottom: 25px;
-
-          .table-header,
-          .table-info {
-            min-width: 100%;
-            width: fit-content;
-            display: flex;
-            flex-wrap: nowrap;
-            background: $dark-color;
+          &:hover {
             color: $light-color;
-            padding: 10px 0;
-            border-radius: 10px;
+            background: $primary-color;
+          }
+          &:last-child {
+            background: $primary-color;
+            color: $light-color;
+          }
+        }
+      }
 
-            span {
-              text-align: center;
-              text-wrap: nowrap;
-              padding: 10px;
-              min-width: 160px;
-              &:nth-child(1) {
-                min-width: 30px;
+      .add-new-field {
+        width: 100%;
+        margin-top: 50px;
+        padding-bottom: 100px;
+        border-bottom: 2px solid $dark-color;
+        form {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 15px;
+          // flex-direction: column;
+          align-items: start;
+
+          input,
+          .drop-down-lists,
+          button {
+            // width: 250px;
+            height: 50px;
+            border: 1px solid $dark-color;
+            color: $dark-color;
+            background: transparent;
+            outline: none;
+            padding: 10px;
+            border-radius: 10px;
+          }
+          input::placeholder {
+            color: $dark-color;
+          }
+
+          .drop-down-lists {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: $dark-color;
+            cursor: pointer;
+            i {
+              font-size: 15px;
+              padding: 5px;
+              pointer-events: none;
+            }
+          }
+          .size-input {
+            width: 100%;
+            display: flex;
+            // display: grid;
+            // grid-template-columns: repeat(2, 1fr);
+            // grid-gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+            & > input {
+              flex-grow: 1;
+            }
+            div {
+              display: flex;
+              margin-left: 15px;
+              align-items: center;
+              input {
                 width: 50px;
+              }
+              i {
+                display: flex;
+                align-items: center;
+                font-size: 28px;
+                margin: 0 2px;
+                transform: rotate(90deg);
               }
             }
           }
-          .table-info {
-            background: $light-color;
-            color: $dark-color;
-            padding: 12px 10px;
-            border-bottom: 1px solid rgba(128, 128, 128, 0.274);
-            border-radius: 0px;
+          button[type="submit"] {
+            background-color: green;
+            border-color: green;
+            color: $light-color;
+            font-size: 15px;
+          }
+          button[type="reset"] {
+            background-color: $primary-color;
+            border-color: $primary-color;
+            color: $light-color;
+            font-size: 15px;
+          }
+        }
+      }
+
+      .customer-invoice {
+        width: 100%;
+        .information {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          .information-contents {
+            display: flex;
+            flex-direction: column;
+            margin: 25px 0;
+            span {
+              margin-bottom: 5px;
+            }
+          }
+        }
+
+        .table-information {
+          display: flex;
+          width: 100%;
+          border: 2px solid $dark-color;
+          border-radius: 25px;
+          overflow: hidden;
+          padding: 25px;
+          .table {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            overflow-x: scroll;
+            white-space: nowrap;
+            padding-bottom: 25px;
+
+            .table-header,
+            .table-info {
+              width: 100%;
+              display: flex;
+              flex-wrap: nowrap;
+              background: $dark-color;
+              color: $light-color;
+              padding: 10px 0;
+              border-radius: 10px;
+              font-size: 11px;
+              span {
+                text-align: center;
+                text-wrap: nowrap;
+                padding: 10px 3px;
+                min-width: 120px;
+                &:nth-child(1) {
+                  min-width: 30px;
+                  // width: 30px;
+                  padding-left: 15px;
+                }
+                &:nth-child(2) {
+                  min-width: 160px;
+                  // width: 160px;
+                }
+                &:nth-child(3) {
+                  min-width: 45px;
+                  // width: 45px;
+                }
+                &:nth-child(4),
+                &:nth-child(5) {
+                  min-width: 55px;
+                  // width: 55px;
+                }
+                &:nth-child(6) {
+                  min-width: 70px;
+                  // width: 70px;
+                }
+                &:nth-child(7) {
+                  min-width: 65px;
+                  // width: 65px;
+                }
+                &:nth-child(8) {
+                  min-width: 180px;
+                  // width: 180px;
+                }
+                &:nth-child(9),
+                &:nth-child(10),
+                &:nth-child(11),
+                &:nth-child(12),
+                &:nth-child(13),
+                &:nth-child(14) {
+                  min-width: 65px;
+                  // width: 65px;
+                }
+                &:nth-child(15),
+                &:nth-child(16) {
+                  min-width: 85px;
+                  // width: 85px;
+                }
+              }
+            }
+            .table-info {
+              background: $light-color;
+              color: $dark-color;
+              padding: 12px 3px;
+              border-bottom: 1px solid rgba(128, 128, 128, 0.274);
+              border-radius: 0px;
+            }
           }
         }
       }

@@ -18,151 +18,152 @@
   </head>
 
   <body class="calculator">
-    <header class="header">Wallcovering Calculator</header>
-    <main class="main">
-      <div class="add-new-button">
-        <button><i class="fa fa-add"></i> Add New Customer</button>
-        <button><i class="fa fa-add"></i> Add New Field</button>
-        <button><i class="fa fa-file-invoice"></i> Generate Invoice</button>
-        <button><i class="fa fa-file-export"></i> Export PDF</button>
-        <button><i class="fa fa-share"></i> Share</button>
-        <button><i class="fa fa-refresh"></i> Reset</button>
-      </div>
-
-      <div class="add-new-field">
-        <form action="">
-          <input type="text" placeholder="Area" />
-          <input type="number" placeholder="Quantity" />
-          <div class="size-input">
-            <input type="number" placeholder="Size Width" />
-            <div>
-              <input type="number" placeholder="1" />
-              <i class="fa fa-slash"></i>
-              <input type="number" placeholder="1" />
-            </div>
-          </div>
-          <div class="size-input">
-            <input type="number" placeholder="Size length" />
-            <div>
-              <input type="number" placeholder="1" />
-              <i class="fa fa-slash"></i>
-              <input type="number" placeholder="1" />
-            </div>
-          </div>
-          <input type="text" placeholder="Loction" />
-          <input type="text" placeholder="Color" />
-          <div class="types drop-down-lists">
-            Select Types
-            <i class="fa fa-angle-down"></i>
-          </div>
-          <div class="types drop-down-lists">
-            Manual
-            <i class="fa fa-angle-down"></i>
-          </div>
-          <div class="types drop-down-lists">
-            Motorized
-            <i class="fa fa-angle-down"></i>
-          </div>
-          <input type="text" placeholder="Position" />
-          <div class="types drop-down-lists">
-            Cassette Type
-            <i class="fa fa-angle-down"></i>
-          </div>
-          <input type="text" placeholder="Cassetter Color" />
-          <div class="types drop-down-lists">
-            Remark
-            <i class="fa fa-angle-down"></i>
-          </div>
-          <button type="reset">Clean Form</button>
-          <button type="submit">Add To List</button>
-        </form>
-      </div>
-
-      <div class="customer-invoice">
-        <div class="information">
-          <div class="information-contents">
-            <span>Name:</span>
-            <span>Address:</span>
-            <span>Postal Code:</span>
-            <span>Province:</span>
-            <span>City:</span>
-            <span>Email Address:</span>
-            <span>Phone Number:</span>
-          </div>
-          <div class="information-contents">
-            <span>Consultation Date:</span>
-            <span>Order Date:</span>
-            <span>Sales Person:</span>
-            <span>Quotation Number:</span>
-            <span>Refferral Source:</span>
-            <span>Delivery / Installation Date</span>
-          </div>
+    <div class="container">
+      <header class="header">Wallcovering Calculator</header>
+      <main class="main">
+        <div class="add-new-button">
+          <button><i class="fa fa-add"></i> Add New Customer</button>
+          <button><i class="fa fa-add"></i> Add New Field</button>
+          <button><i class="fa fa-file-invoice"></i> Generate Invoice</button>
+          <button><i class="fa fa-file-export"></i> Export PDF</button>
+          <button><i class="fa fa-share"></i> Share</button>
+          <button><i class="fa fa-refresh"></i> Reset</button>
         </div>
 
-        <div class="table-information">
-          <div class="table">
-            <div class="table-header">
-              <span>Row</span>
-              <span>Area</span>
-              <span>Quantity</span>
-              <span>Size Width</span>
-              <span>Size Lenght</span>
-              <span>Location</span>
-              <span>Color</span>
-              <span>Type</span>
-              <span>Manual</span>
-              <span>Motorized</span>
-              <span>Position</span>
-              <span>Cassette Type</span>
-              <span>Cassette Color</span>
-              <span>Remark</span>
-              <span>Unit Price/Blind</span>
-              <span>Total</span>
+        <div class="add-new-field">
+          <form action="">
+            <input type="text" placeholder="Area" />
+            <input type="number" placeholder="Quantity" />
+            <div class="size-input">
+              <input type="number" placeholder="Size Width" />
+              <div>
+                <input type="number" placeholder="1" />
+                <i class="fa fa-slash"></i>
+                <input type="number" placeholder="1" />
+              </div>
             </div>
-            <!-- sample data -->
-            <div class="table-info">
-              <span>1</span>
-              <span>Kitchen</span>
-              <span>3</span>
-              <span>48</span>
-              <span>52</span>
-              <span>Inside</span>
-              <span>Black</span>
-              <span>Lovers Deluxe</span>
-              <span>No</span>
-              <span>24-V</span>
-              <span>Wall</span>
-              <span>Round</span>
-              <span>Red</span>
-              <span>3 in 1</span>
-              <span>1200</span>
-              <span>4850</span>
+            <div class="size-input">
+              <input type="number" placeholder="Size length" />
+              <div>
+                <input type="number" placeholder="1" />
+                <i class="fa fa-slash"></i>
+                <input type="number" placeholder="1" />
+              </div>
             </div>
-            <!-- sample data -->
-            <div class="table-info">
-              <span>2</span>
-              <span>Kitchen</span>
-              <span>3</span>
-              <span>48</span>
-              <span>52</span>
-              <span>Outside</span>
-              <span>Black</span>
-              <span>Lovers Deluxe</span>
-              <span>No</span>
-              <span>12-V</span>
-              <span>Wall</span>
-              <span>Round</span>
-              <span>Red</span>
-              <span>2 in 1</span>
-              <span>1900</span>
-              <span>2334</span>
+            <input type="text" placeholder="Loction" />
+            <input type="text" placeholder="Color" />
+            <div class="types drop-down-lists">
+              Select Types
+              <i class="fa fa-angle-down"></i>
+            </div>
+            <div class="types drop-down-lists">
+              Manual
+              <i class="fa fa-angle-down"></i>
+            </div>
+            <div class="types drop-down-lists">
+              Motorized
+              <i class="fa fa-angle-down"></i>
+            </div>
+            <input type="text" placeholder="Position" />
+            <div class="types drop-down-lists">
+              Cassette Type
+              <i class="fa fa-angle-down"></i>
+            </div>
+            <input type="text" placeholder="Cassetter Color" />
+            <div class="types drop-down-lists">
+              Remark
+              <i class="fa fa-angle-down"></i>
+            </div>
+            <button type="reset">Clean Form</button>
+            <button type="submit">Add To List</button>
+          </form>
+        </div>
+
+        <div class="customer-invoice">
+          <div class="information">
+            <div class="information-contents">
+              <span>Name:</span>
+              <span>Address:</span>
+              <span>Postal Code:</span>
+              <span>Province:</span>
+              <span>City:</span>
+              <span>Email Address:</span>
+              <span>Phone Number:</span>
+            </div>
+            <div class="information-contents">
+              <span>Consultation Date:</span>
+              <span>Order Date:</span>
+              <span>Sales Person:</span>
+              <span>Quotation Number:</span>
+              <span>Refferral Source:</span>
+              <span>Delivery / Installation Date</span>
+            </div>
+          </div>
+
+          <div class="table-information">
+            <div class="table">
+              <div class="table-header">
+                <span>Row</span>
+                <span>Area</span>
+                <span>Qty</span>
+                <span>Size-W</span>
+                <span>Size-L</span>
+                <span>Location</span>
+                <span>Color</span>
+                <span>Type</span>
+                <span>Manual</span>
+                <span>Motorized</span>
+                <span>Position</span>
+                <span>Cassette-T</span>
+                <span>Cassette-C</span>
+                <span>Remark</span>
+                <span>Unit Price/Blind</span>
+                <span>Total</span>
+              </div>
+              <!-- sample data -->
+              <div class="table-info">
+                <span>1</span>
+                <span>Kitchen</span>
+                <span>3</span>
+                <span>48</span>
+                <span>52</span>
+                <span>Inside</span>
+                <span>Black</span>
+                <span>Lovers Deluxe</span>
+                <span>No</span>
+                <span>24-V</span>
+                <span>Wall</span>
+                <span>Round</span>
+                <span>Red</span>
+                <span>3 in 1</span>
+                <span>1200</span>
+                <span>4850</span>
+              </div>
+              <!-- sample data -->
+              <div class="table-info">
+                <span>2</span>
+                <span>Kitchen</span>
+                <span>3</span>
+                <span>48</span>
+                <span>52</span>
+                <span>Outside</span>
+                <span>Black</span>
+                <span>Lovers Deluxe</span>
+                <span>No</span>
+                <span>12-V</span>
+                <span>Wall</span>
+                <span>Round</span>
+                <span>Red</span>
+                <span>2 in 1</span>
+                <span>1900</span>
+                <span>2334</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
-    <div class="footer"></div>
-
+      </main>
+      <div class="footer"></div>
+    </div>
     <script src="resources/scripts/calculator.js"></script>
   </body>
 </html>
